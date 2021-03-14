@@ -12,6 +12,7 @@
 
 ## Changes since v7.0.1
 
+- [#1108](https://github.com/oauth2-proxy/oauth2-proxy/pull/1108) Add alternative ways to generate cookie secrets to docs (@JoelSpeed)
 - [#1045](https://github.com/oauth2-proxy/oauth2-proxy/pull/1045) Ensure redirect URI always has a scheme (@JoelSpeed)
 - [#1103](https://github.com/oauth2-proxy/oauth2-proxy/pull/1103) Deprecate upstream request signatures (@NickMeves)
 - [#914](https://github.com/oauth2-proxy/oauth2-proxy/pull/914) Extract email from id_token for azure provider when oidc is configured

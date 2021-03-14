@@ -3,11 +3,26 @@ id: overview
 title: Overview
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 `oauth2-proxy` can be configured via [config file](#config-file), [command line options](#command-line-options) or [environment variables](#environment-variables).
 
 ### Generating a Cookie Secret
 
-To generate a strong cookie secret use `python -c 'import os,base64; print(base64.urlsafe_b64encode(os.urandom(16)).decode())'`
+To generate a strong cookie secret use one of the below commands:
+
+<Tabs
+  defaultValue="python"
+  values={[
+    {label: 'Python', value: 'python'},
+    {label: 'Bash', value: 'bash'},
+    {label: 'OpenSSL', value: 'openssl'},
+  ]}>
+  <TabItem value="python"><code>python -c 'import os,base64; print(base64.urlsafe_b64encode(os.urandom(32)).decode())'</code></TabItem>
+  <TabItem value="bash"><code>cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1 | base64</code></TabItem>
+  <TabItem value="openssl"><code>openssl rand -base64 32</code></TabItem>
+</Tabs>
 
 ### Config File
 
